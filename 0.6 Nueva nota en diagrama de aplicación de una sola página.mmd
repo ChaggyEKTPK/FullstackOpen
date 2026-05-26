@@ -1,0 +1,6 @@
+sequenceDiagram
+    Navegador->>+Navegador: Usuario escribe la nota y la crea
+    Navegador->>+Navegador: |e.preventDefault() (Evita recargar la página)|
+    Navegador->>+Navegador: notes.push(note) (Guarda la nota localmente) -redrawNotes() (Dibuja la nueva nota en el DOM)
+    Navegador->>+Servidor: POST /new_note_spa
+    Servidor->>+Navegador: HTTP Status Code: 201 Created
